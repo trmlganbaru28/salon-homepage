@@ -19,12 +19,12 @@
 
     main {
       width: min(100% - 40px, 760px);
-      margin: 0 auto;
-      padding: 35px 0 60px;
+      margin: 0;
+      padding: 35px 0 60px 40px;
     }
 
     header {
-      text-align: center;
+      text-align: left;
       margin-bottom: 65px;
     }
 
@@ -103,6 +103,15 @@
       min-height: 145px;
     }
 
+    .real-link {
+      display: inline-block;
+      font-size: 25px;
+      font-weight: bold;
+      font-style: italic;
+      color: #f05298;
+      cursor: pointer;
+    }
+
     .real-post {
       padding: 0 0 18px;
       margin: 18px 0;
@@ -121,21 +130,20 @@
       margin-bottom: 0;
     }
 
-    .real-title {
-      font-size: 25px;
-      font-weight: bold;
-      font-style: italic;
-      color: #f05298;
-    }
-
     footer {
       margin-top: 55px;
+      font-size: 14px;
+    }
+
+    .payment {
+      margin-top: 70px;
       font-size: 14px;
     }
 
     @media (max-width: 480px) {
       main {
         width: calc(100% - 36px);
+        padding: 25px 0 50px 18px;
       }
 
       header {
@@ -173,11 +181,6 @@
     <section class="links">
       <a href="#" target="_blank" rel="noopener noreferrer">ホットペッパー 🔗</a>
       <a href="#" target="_blank" rel="noopener noreferrer">LINEからご予約 🔗</a>
-      <a href="#" target="_blank" rel="noopener noreferrer">Instagram 🔗</a>
-    </section>
-
-    <section>
-      <p>決済方法<br>VISA / JCB / 電子マネー / QRコード / 現金</p>
     </section>
 
     <section class="profile">
@@ -185,28 +188,22 @@
       <div>
         <a href="#">プロフィール</a><br>
         好きなこと<br>
-        <a href="#">Instagram</a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram 🔗</a>
       </div>
     </section>
 
-    <section id="real">
-      <div class="real-title">real</div>
-
-      <article class="real-post">
-        <time datetime="2026-11-28T16:04">2026.11.28 16:04</time>
-        <p>オープン準備中 🎀</p>
-      </article>
-
-      <article class="real-post">
-        <time datetime="2026-11-20T00:01">2026.11.20 0:01</time>
-        <p>ダウンタイムみてる</p>
-      </article>
+    <section>
+      <a class="real-link" href="real.html">real</a>
     </section>
 
     <section>
       <h2>access</h2>
       <p>住所：ここに住所を入力<br>営業時間：ここに営業時間を入力</p>
       <p>open 9:00</p>
+    </section>
+
+    <section class="payment">
+      <p>決済方法<br>VISA / JCB / 電子マネー / QRコード / 現金</p>
     </section>
 
     <footer>© omise</footer>

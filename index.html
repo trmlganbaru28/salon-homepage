@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>omise | salon</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #fffdfd;
+      color: #f05298;
+      font-family: Georgia, "Yu Mincho", serif;
+    }
+
+    main {
+      width: min(100% - 40px, 760px);
+      margin: 0 auto;
+      padding: 35px 0 60px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 65px;
+    }
+
+    .logo {
+      font-size: clamp(54px, 12vw, 88px);
+      font-weight: bold;
+      font-style: italic;
+      letter-spacing: 2px;
+      margin: 0;
+    }
+
+    section {
+      margin: 0 0 55px;
+    }
+
+    h2 {
+      font-size: 27px;
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    p {
+      line-height: 1.9;
+    }
+
+    .photo {
+      width: 270px;
+      max-width: 100%;
+      min-height: 150px;
+      background: #efd0d8;
+      color: #222;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      font-family: sans-serif;
+      font-weight: bold;
+      padding: 20px;
+    }
+
+    .menu-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      max-width: 340px;
+      margin: 8px 0;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      opacity: 0.65;
+    }
+
+    .links a {
+      display: block;
+      font-size: 21px;
+      font-weight: bold;
+      text-decoration: underline;
+      margin: 8px 0;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .profile .photo {
+      width: 145px;
+      min-height: 145px;
+    }
+
+    .real-post {
+      padding: 0 0 18px;
+      margin: 18px 0;
+      border-bottom: 1px dashed #e8a6c0;
+      color: #55454d;
+      overflow-wrap: anywhere;
+    }
+
+    .real-post time {
+      font-size: 13px;
+      color: #997985;
+    }
+
+    .real-post p {
+      white-space: pre-wrap;
+      margin-bottom: 0;
+    }
+
+    .real-title {
+      font-size: 25px;
+      font-weight: bold;
+      font-style: italic;
+      color: #f05298;
+    }
+
+    footer {
+      margin-top: 55px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 480px) {
+      main {
+        width: calc(100% - 36px);
+      }
+
+      header {
+        margin-bottom: 45px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1 class="logo">omise</h1>
+    </header>
+
+    <section>
+      <div class="photo">店内写真など</div>
+    </section>
+
+    <section>
+      <h2>こだわり<br>お気持ち表明</h2>
+      <p>ゆっくり過ごして、きれいになれる場所。</p>
+    </section>
+
+    <section>
+      <h2>menu</h2>
+      <div class="menu-item"><span>眉毛WAX</span><span>¥9999</span></div>
+      <div class="menu-item"><span>まつげパーマ</span><span>¥9999</span></div>
+      <div class="menu-item"><span>メニュー3</span><span>¥9999</span></div>
+      <div class="menu-item"><span>メニュー4</span><span>¥9999</span></div>
+      <br>
+      <div class="menu-item"><span>オプション1</span><span>¥666</span></div>
+      <div class="menu-item"><span>オプション2</span><span>¥555</span></div>
+    </section>
+
+    <section class="links">
+      <a href="#" target="_blank" rel="noopener noreferrer">ホットペッパー 🔗</a>
+      <a href="#" target="_blank" rel="noopener noreferrer">LINEからご予約 🔗</a>
+      <a href="#" target="_blank" rel="noopener noreferrer">Instagram 🔗</a>
+    </section>
+
+    <section>
+      <p>決済方法<br>VISA / JCB / 電子マネー / QRコード / 現金</p>
+    </section>
+
+    <section class="profile">
+      <div class="photo">プロフィール画像</div>
+      <div>
+        <a href="#">プロフィール</a><br>
+        好きなこと<br>
+        <a href="#">Instagram</a>
+      </div>
+    </section>
+
+    <section id="real">
+      <div class="real-title">real</div>
+
+      <article class="real-post">
+        <time datetime="2026-11-28T16:04">2026.11.28 16:04</time>
+        <p>オープン準備中 🎀</p>
+      </article>
+
+      <article class="real-post">
+        <time datetime="2026-11-20T00:01">2026.11.20 0:01</time>
+        <p>ダウンタイムみてる</p>
+      </article>
+    </section>
+
+    <section>
+      <h2>access</h2>
+      <p>住所：ここに住所を入力<br>営業時間：ここに営業時間を入力</p>
+      <p>open 9:00</p>
+    </section>
+
+    <footer>© omise</footer>
+  </main>
+</body>
+</html>

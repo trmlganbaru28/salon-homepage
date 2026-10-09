@@ -17,57 +17,11 @@
       font-family: Georgia, "Yu Mincho", serif;
     }
 
-  main {
-  width: 100%;
-  margin: 0;
-  padding: 35px 0 60px 40px;
-}
-
-main > section {
-  width: 420px;
-  max-width: 100%;
-}
-
-header {
-  text-align: left;
-  margin-bottom: 65px;
-}
-
-section {
-  margin-bottom: 38px;
-}
-
-h2 {
-  font-size: 20px;
-  margin-bottom: 12px;
-}
-
-p {
-  font-size: 13px;
-  line-height: 1.8;
-}
-
-.menu-item {
-  max-width: 200px;
-  font-size: 10px;
-  margin: 4px 0;
-}
-
-.links a {
-  font-size: 16px;
-}
-
-.profile {
-  font-size: 13px;
-}
-
-.real-link {
-  font-size: 20px;
-}
-
-footer {
-  font-size: 11px;
-}
+    main {
+      width: min(100% - 40px, 760px);
+      margin: 0;
+      padding: 35px 0 60px 40px;
+    }
 
     header {
       text-align: left;
@@ -196,6 +150,80 @@ footer {
         margin-bottom: 45px;
       }
     }
+  /* スマホ表示を参考画像に寄せる */
+@media (max-width: 600px) {
+  main {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 20px 0 40px 24px !important;
+  }
+
+  header {
+    width: 300px !important;
+    max-width: calc(100vw - 48px) !important;
+    text-align: left !important;
+    margin-bottom: 45px !important;
+  }
+
+  .logo {
+    font-size: 54px !important;
+  }
+
+  main > section {
+    width: 300px !important;
+    max-width: calc(100vw - 48px) !important;
+    margin: 0 0 32px !important;
+  }
+
+  h2 {
+    font-size: 17px !important;
+    margin-bottom: 10px !important;
+  }
+
+  p {
+    font-size: 11px !important;
+    line-height: 1.7 !important;
+  }
+
+  .photo {
+    width: 180px !important;
+    min-height: 100px !important;
+    font-size: 12px !important;
+  }
+
+  .menu-item {
+    width: 155px !important;
+    max-width: 155px !important;
+    justify-content: flex-start !important;
+    gap: 12px !important;
+    font-size: 13px !important;
+    margin: 5px 0 !important;
+  }
+
+  .links a {
+    font-size: 14px !important;
+    margin: 5px 0 !important;
+  }
+
+  .profile {
+    gap: 12px !important;
+    font-size: 11px !important;
+  }
+
+  .profile .photo {
+    width: 90px !important;
+    min-height: 90px !important;
+  }
+
+  .real-link {
+    font-size: 16px !important;
+  }
+
+  footer {
+    font-size: 10px !important;
+  }
+}
   </style>
 </head>
 <body>

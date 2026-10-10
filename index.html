@@ -4,43 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>omise | salon</title>
-/* 店内写真だけ右寄せ */
-section:has(> .photo) {
-  display: flex;
-  justify-content: flex-end;
-}
 
-/* メニューの値段をそろえる */
-.menu-item {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 75px;
-  align-items: start;
-  gap: 8px;
-  width: 100%;
-  max-width: 280px;
-  margin: 5px 0;
-  font-size: 13px;
-  font-weight: bold;
-}
-
-.menu-item .price {
-  white-space: nowrap;
-  text-align: right;
-}
-
-/* 説明文の横幅を広げる */
-section {
-  width: 560px;
-  max-width: calc(100vw - 48px);
-}
-
-/* スマホ用 */
-@media (max-width: 600px) {
-  section {
-    width: 560px;
-    max-width: calc(100vw - 48px);
-  }
-}
   <style>
     * {
       box-sizing: border-box;
@@ -55,15 +19,14 @@ section {
 
     main {
       width: 100%;
+      max-width: 520px;
       margin: 0;
-      padding: 20px 0 40px 24px;
+      padding: 20px 16px 40px 16px;
     }
 
     header {
-      width: 300px;
-      max-width: calc(100vw - 48px);
       text-align: left;
-      margin-bottom: 45px;
+      margin-bottom: 36px;
     }
 
     .logo {
@@ -75,20 +38,42 @@ section {
     }
 
     section {
-      width: 300px;
-      max-width: calc(100vw - 48px);
-      margin: 0 0 32px;
+      width: 100%;
+      margin: 0 0 28px;
     }
 
     h2 {
       font-size: 17px;
       font-style: italic;
-      margin: 0 0 10px;
+      margin: 0 0 8px;
     }
 
     p {
       font-size: 11px;
       line-height: 1.7;
+      margin: 0;
+    }
+
+    /* 説明書きは折り返さず1行で表示（画面幅に合わせて文字サイズが縮む） */
+    .note {
+      white-space: nowrap;
+      font-size: clamp(7px, calc((100vw - 32px) / 44), 12px);
+      line-height: 1.8;
+    }
+
+    /* 見出しサイズ：menu > option */
+    .h-menu {
+      font-size: 22px;
+    }
+
+    .h-option {
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    /* 大きめの区切り（約2行分あける） */
+    section.gap-l {
+      margin-bottom: 68px;
     }
 
     .photo {
@@ -105,29 +90,50 @@ section {
       padding: 20px;
       font-size: 12px;
     }
-    /* 店内写真だけ右寄せ */
-section:has(> .photo) {
-  display: flex;
-  justify-content: flex-end;
-}
 
+    /* 店内写真を右寄せ */
+    .main-photo {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .main-photo .photo {
+      width: 36%;
+      min-height: 0;
+      aspect-ratio: 375 / 240;
+    }
+
+    /* メニュー：名前の列と価格の列を固定して¥の位置をそろえる */
     .menu-item {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 75px;
-  align-items: start;
-  gap: 8px;
-  width: 100%;
-  max-width: 280px;
-  margin: 5px 0;
-  font-size: 13px;
-  font-weight: bold;
-}
+      display: grid;
+      grid-template-columns: 17em auto;
+      justify-content: start;
+      align-items: start;
+      gap: 8px;
+      margin: 5px 0;
+      font-size: 13px;
+      font-weight: bold;
+    }
 
-.menu-item .price {
-  white-space: nowrap;
-  text-align: right;
-}
-    
+    .menu-item small {
+      font-size: 10px;
+    }
+
+    .menu-item .price {
+      white-space: nowrap;
+      text-align: left;
+    }
+
+
+    /* 支払い・access・open：注意書きと同じサイズで、下にまとめる */
+    .info {
+      margin-top: 36px;
+    }
+
+    .info-item {
+      margin: 0 0 8px;
+    }
+
     a {
       color: inherit;
       text-decoration: none;
@@ -177,32 +183,6 @@ section:has(> .photo) {
       margin-top: 35px;
       font-size: 10px;
     }
-
-    @media (max-width: 600px) {
-      main {
-        padding: 20px 0 40px 24px;
-      }
-
-      header {
-        width: 300px;
-        max-width: calc(100vw - 48px);
-      }
-
-      .logo {
-        font-size: 54px;
-      }
-
-      section {
-        width: 300px;
-        max-width: calc(100vw - 48px);
-        margin-bottom: 32px;
-      }
-
-      .menu-item {
-        max-width: 280px;
-        font-size: 13px;
-      }
-    }
   </style>
 </head>
 
@@ -214,15 +194,15 @@ section:has(> .photo) {
       <h1 class="logo">omise</h1>
     </header>
 
-    <!-- メイン写真 -->
-    <section>
+    <!-- メイン写真（右寄せ） -->
+    <section class="main-photo">
       <div class="photo">
         店内写真など
       </div>
     </section>
 
     <!-- ごあいさつ・お気持ち表明・こだわり -->
-    <section>
+    <section class="gap-l">
       <p>
         （あいさつ）<br>
         （お気持ち表明）<br>
@@ -232,15 +212,15 @@ section:has(> .photo) {
 
     <!-- メニュー -->
     <section>
-      <h2>menu</h2>
+      <h2 class="h-menu">menu</h2>
 
       <div class="menu-item">
-        <span>眉毛Wax（間引き付き）</span>
+        <span>眉毛Wax<small>（間引き付き）</small></span>
         <span class="price">¥6,000</span>
       </div>
 
       <div class="menu-item">
-        <span>まつげパーマ（アイシャンプー付）</span>
+        <span>まつげパーマ<small>（アイシャンプー付）</small></span>
         <span class="price">¥7,000</span>
       </div>
 
@@ -252,7 +232,7 @@ section:has(> .photo) {
 
     <!-- オプション -->
     <section>
-      <h2>option</h2>
+      <h2 class="h-option">option</h2>
 
       <div class="menu-item">
         <span>おかわり間引き</span>
@@ -264,12 +244,12 @@ section:has(> .photo) {
         <span class="price">¥800</span>
       </div>
 
-      <p>その他のメニュー・オプションは、予約ページをご確認ください。</p>
+      <p class="note">その他のメニュー・オプションは、予約ページをご確認ください。</p>
     </section>
 
     <!-- 注意事項 -->
-    <section>
-      <p>
+    <section class="gap-l">
+      <p class="note">
         ★ご新規様・リピーター様ともに、同一料金でご案内しております。<br>
         ★眉毛メニューをご予約のお客様は、ご来店の3週間前から眉毛の自己処理をお控えください。<br>
         ★まつげメニューをご予約のお客様は、当日のアイメイクはお控えください。
@@ -277,7 +257,7 @@ section:has(> .photo) {
     </section>
 
     <!-- 予約リンク -->
-    <section class="links">
+    <section class="links gap-l">
       🎀ご予約はこちら🎀
 
       <a href="YOUR_HOTPEPPER_URL" target="_blank" rel="noopener noreferrer">
@@ -290,7 +270,7 @@ section:has(> .photo) {
     </section>
 
     <!-- プロフィール -->
-    <section class="profile">
+    <section class="profile gap-l">
       <div class="photo">
         わし<br>
         （似顔絵か自作キャラ）
@@ -306,24 +286,22 @@ section:has(> .photo) {
       </div>
     </section>
 
-    <!-- お支払い方法 -->
-    <section class="payment">
-      お支払い方法<br>
-      クレジットカード／電子マネー／QRコード決済／交通系IC／現金
-    </section>
+    <!-- お支払い方法・アクセス・営業時間（REALへの隠しリンク） -->
+    <section class="info note">
+      <div class="info-item">
+        <b>お支払い方法</b><br>
+        クレジットカード／電子マネー／QRコード決済／交通系IC／現金
+      </div>
 
-    <!-- アクセス -->
-    <section>
-      <h2>access</h2>
-      アクセス県アクセス市アクセス区
-    </section>
+      <div class="info-item">
+        <b><i>access</i></b><br>
+        アクセス県アクセス市アクセス区
+      </div>
 
-    <!-- 営業時間・REALへの隠しリンク -->
-    <section>
-      <h2>
-        open 9:00〜
+      <div class="info-item">
+        <b><i>open 9:00〜</i></b>
         <a href="real.html" class="secret-link" aria-label="REALページ">🎀</a>
-      </h2>
+      </div>
     </section>
 
   </main>

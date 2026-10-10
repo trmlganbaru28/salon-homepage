@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>キャンセルポリシー | omise</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #fffdfd;
+      color: #f05298;
+      font-family: Georgia, "Yu Mincho", serif;
+    }
+
+    :root {
+      /* 一番長い項目が2行に収まるよう、本文幅に合わせて文字サイズを調整 */
+      --fs: clamp(7px, calc((100vw - 16px - min(30vw, 160px)) / 27), 11px);
+    }
+
+    main {
+      width: 100%;
+      max-width: 520px;
+      margin: 0;
+      padding: 20px min(30vw, 160px) 60px 16px;
+    }
+
+    .logo {
+      font-size: 54px;
+      font-weight: bold;
+      font-style: italic;
+      letter-spacing: 2px;
+      margin: 0 0 36px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 0 0 28px;
+    }
+
+    h3 {
+      font-size: 14px;
+      font-weight: bold;
+      margin: 0 0 10px;
+    }
+
+    section {
+      margin: 0 0 32px;
+    }
+
+    /* 「・」から始まる項目は、2行目以降も頭をそろえる */
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      font-size: var(--fs);
+      line-height: 1.9;
+      padding-left: 1em;
+      text-indent: -1em;
+      margin: 0 0 10px;
+    }
+
+    .closing {
+      font-size: var(--fs);
+      line-height: 1.9;
+      margin: 0 0 16px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    a:hover {
+      opacity: 0.65;
+    }
+
+    .back {
+      display: block;
+      margin-top: 48px;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+
+    <h1 class="logo">omise</h1>
+
+    <h2>🎀 キャンセルポリシー</h2>
+
+    <section>
+      <h3>【キャンセル・変更について】</h3>
+      <ul>
+        <li>・ネット予約のお客様は、前日までに予約サイトよりキャンセル・変更をお願いいたします。</li>
+        <li>・ネット予約以外でご予約のお客様は、公式LINEよりご連絡くださいませ。</li>
+        <li>・当日のキャンセルは、ご予約時間までに公式LINEよりご連絡いただけましたら、キャンセル料はかかりません。</li>
+        <li>・ご予約時間を過ぎてからのご連絡は、施術料金の50％をキャンセル料として次回ご来店時に頂戴いたします。</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>【無断キャンセルについて】</h3>
+      <ul>
+        <li>・ご連絡のないままご来店がなかった場合は、施術料金の100％をキャンセル料として頂戴いたします。</li>
+        <li>・また、無断キャンセルをされた場合、今後のご予約をお断りすることがございます。</li>
+      </ul>
+    </section>
+
+    <section>
+      <p class="closing">
+        ご予約のお時間を確保してお待ちしておりますので、キャンセルや変更の際は、なるべくお早めにご連絡いただけると嬉しいです☺️
+      </p>
+      <p class="closing">
+        皆様に気持ちよくご利用いただくため、ご理解とご協力をお願いいたしますm(__)m
+      </p>
+    </section>
+
+    <a href="index.html" class="back">← back</a>
+
+  </main>
+</body>
+</html>

@@ -1,10 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>omise | salon</title>
+
   <style>
     * {
       box-sizing: border-box;
@@ -18,64 +18,20 @@
     }
 
     main {
-  width: 100%;
-  margin: 0;
-  padding: 35px 0 60px 40px;
-}
+      width: 100%;
+      margin: 0;
+      padding: 20px 0 40px 24px;
+    }
 
-main > section {
-  width: 420px;
-  max-width: 100%;
-}
-
-header {
-  text-align: left;
-  margin-bottom: 65px;
-}
-
-section {
-  margin-bottom: 38px;
-}
-
-h2 {
-  font-size: 20px;
-  margin-bottom: 12px;
-}
-
-p {
-  font-size: 13px;
-  line-height: 1.8;
-}
-
-.menu-item {
-  max-width: 260px;
-  font-size: 15px;
-  margin: 7px 0;
-}
-
-.links a {
-  font-size: 16px;
-}
-
-.profile {
-  font-size: 13px;
-}
-
-.real-link {
-  font-size: 20px;
-}
-
-footer {
-  font-size: 11px;
-}
-    
     header {
+      width: 300px;
+      max-width: calc(100vw - 48px);
       text-align: left;
-      margin-bottom: 65px;
+      margin-bottom: 45px;
     }
 
     .logo {
-      font-size: clamp(54px, 12vw, 88px);
+      font-size: 54px;
       font-weight: bold;
       font-style: italic;
       letter-spacing: 2px;
@@ -83,23 +39,26 @@ footer {
     }
 
     section {
-      margin: 0 0 55px;
+      width: 300px;
+      max-width: calc(100vw - 48px);
+      margin: 0 0 32px;
     }
 
     h2 {
-      font-size: 27px;
+      font-size: 17px;
       font-style: italic;
-      margin-bottom: 20px;
+      margin: 0 0 10px;
     }
 
     p {
-      line-height: 1.9;
+      font-size: 11px;
+      line-height: 1.7;
     }
 
     .photo {
-      width: 270px;
+      width: 180px;
       max-width: 100%;
-      min-height: 150px;
+      min-height: 100px;
       background: #efd0d8;
       color: #222;
       display: grid;
@@ -108,16 +67,24 @@ footer {
       font-family: sans-serif;
       font-weight: bold;
       padding: 20px;
+      font-size: 12px;
     }
 
     .menu-item {
-      display: flex;
-      justify-content: space-between;
-      gap: 15px;
-      max-width: 340px;
-      margin: 8px 0;
-      font-size: 20px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: start;
+      gap: 8px;
+      width: 100%;
+      max-width: 280px;
+      margin: 5px 0;
+      font-size: 13px;
       font-weight: bold;
+    }
+
+    .menu-item .price {
+      white-space: nowrap;
+      text-align: right;
     }
 
     a {
@@ -131,202 +98,193 @@ footer {
 
     .links a {
       display: block;
-      font-size: 21px;
+      font-size: 14px;
       font-weight: bold;
       text-decoration: underline;
-      margin: 8px 0;
+      margin: 5px 0;
     }
 
     .profile {
       display: flex;
       align-items: center;
-      gap: 22px;
+      gap: 12px;
       flex-wrap: wrap;
+      font-size: 11px;
     }
 
     .profile .photo {
-      width: 145px;
-      min-height: 145px;
+      width: 90px;
+      min-height: 90px;
+      padding: 8px;
     }
 
     .real-link {
-      display: inline-block;
-      font-size: 25px;
-      font-weight: bold;
-      font-style: italic;
-      color: #f05298;
+      font-size: 16px;
+    }
+
+    .secret-link {
+      text-decoration: none;
+      color: inherit;
       cursor: pointer;
     }
 
-    .real-post {
-      padding: 0 0 18px;
-      margin: 18px 0;
-      border-bottom: 1px dashed #e8a6c0;
-      color: #55454d;
-      overflow-wrap: anywhere;
-    }
-
-    .real-post time {
-      font-size: 13px;
-      color: #997985;
-    }
-
-    .real-post p {
-      white-space: pre-wrap;
-      margin-bottom: 0;
+    .payment {
+      font-size: 11px;
     }
 
     footer {
-      margin-top: 55px;
-      font-size: 14px;
+      margin-top: 35px;
+      font-size: 10px;
     }
 
-    .payment {
-      margin-top: 70px;
-      font-size: 14px;
-    }
-
-    @media (max-width: 480px) {
+    @media (max-width: 600px) {
       main {
-        width: calc(100% - 36px);
-        padding: 25px 0 50px 18px;
+        padding: 20px 0 40px 24px;
       }
 
       header {
-        margin-bottom: 45px;
+        width: 300px;
+        max-width: calc(100vw - 48px);
+      }
+
+      .logo {
+        font-size: 54px;
+      }
+
+      section {
+        width: 300px;
+        max-width: calc(100vw - 48px);
+        margin-bottom: 32px;
+      }
+
+      .menu-item {
+        max-width: 280px;
+        font-size: 13px;
       }
     }
-  /* スマホ表示を参考画像に寄せる */
-@media (max-width: 600px) {
-  main {
-    width: 100% !important;
-    max-width: none !important;
-    margin: 0 !important;
-    padding: 20px 0 40px 24px !important;
-  }
-
-  header {
-    width: 300px !important;
-    max-width: calc(100vw - 48px) !important;
-    text-align: left !important;
-    margin-bottom: 45px !important;
-  }
-
-  .logo {
-    font-size: 54px !important;
-  }
-
-  main > section {
-    width: 300px !important;
-    max-width: calc(100vw - 48px) !important;
-    margin: 0 0 32px !important;
-  }
-
-  h2 {
-    font-size: 17px !important;
-    margin-bottom: 10px !important;
-  }
-
-  p {
-    font-size: 11px !important;
-    line-height: 1.7 !important;
-  }
-
-  .photo {
-    width: 180px !important;
-    min-height: 100px !important;
-    font-size: 12px !important;
-  }
-
-  .menu-item {
-    width: 155px !important;
-    max-width: 155px !important;
-    justify-content: flex-start !important;
-    gap: 12px !important;
-    font-size: 13px !important;
-    margin: 5px 0 !important;
-  }
-
-  .links a {
-    font-size: 14px !important;
-    margin: 5px 0 !important;
-  }
-
-  .profile {
-    gap: 12px !important;
-    font-size: 11px !important;
-  }
-
-  .profile .photo {
-    width: 90px !important;
-    min-height: 90px !important;
-  }
-
-  .real-link {
-    font-size: 16px !important;
-  }
-
-  footer {
-    font-size: 10px !important;
-  }
-}
   </style>
 </head>
+
 <body>
   <main>
+
+    <!-- ロゴ -->
     <header>
       <h1 class="logo">omise</h1>
     </header>
 
+    <!-- メイン写真 -->
     <section>
-      <div class="photo">店内写真など</div>
-    </section>
-
-    <section>
-      <h2>こだわり<br>お気持ち表明</h2>
-      <p>ゆっくり過ごして、きれいになれる場所。</p>
-    </section>
-
-    <section>
-      <h2>menu</h2>
-      <div class="menu-item"><span>眉毛WAX</span><span>¥9999</span></div>
-      <div class="menu-item"><span>まつげパーマ</span><span>¥9999</span></div>
-      <div class="menu-item"><span>メニュー3</span><span>¥9999</span></div>
-      <div class="menu-item"><span>メニュー4</span><span>¥9999</span></div>
-      <br>
-      <div class="menu-item"><span>オプション1</span><span>¥666</span></div>
-      <div class="menu-item"><span>オプション2</span><span>¥555</span></div>
-    </section>
-
-    <section class="links">
-      <a href="#" target="_blank" rel="noopener noreferrer">ホットペッパー 🔗</a>
-      <a href="#" target="_blank" rel="noopener noreferrer">LINEからご予約 🔗</a>
-    </section>
-
-    <section class="profile">
-      <div class="photo">プロフィール画像</div>
-      <div>
-        <a href="#">プロフィール</a><br>
-        好きなこと<br>
-        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram 🔗</a>
+      <div class="photo">
+        店内写真など
       </div>
     </section>
 
+    <!-- ごあいさつ・お気持ち表明・こだわり -->
     <section>
-      <a class="real-link" href="real.html">real</a>
+      <p>
+        （あいさつ）<br>
+        （お気持ち表明）<br>
+        （こだわり）
+      </p>
     </section>
 
+    <!-- メニュー -->
+    <section>
+      <h2>menu</h2>
+
+      <div class="menu-item">
+        <span>眉毛Wax（間引き付き）</span>
+        <span class="price">¥6,000</span>
+      </div>
+
+      <div class="menu-item">
+        <span>まつげパーマ（アイシャンプー付）</span>
+        <span class="price">¥7,000</span>
+      </div>
+
+      <div class="menu-item">
+        <span>眉毛Wax＋まつげパーマ</span>
+        <span class="price">¥12,000</span>
+      </div>
+    </section>
+
+    <!-- オプション -->
+    <section>
+      <h2>option</h2>
+
+      <div class="menu-item">
+        <span>おかわり間引き</span>
+        <span class="price">¥500</span>
+      </div>
+
+      <div class="menu-item">
+        <span>まつげトリートメント</span>
+        <span class="price">¥800</span>
+      </div>
+
+      <p>その他のメニュー・オプションは、予約ページをご確認ください。</p>
+    </section>
+
+    <!-- 注意事項 -->
+    <section>
+      <p>
+        ★ご新規様・リピーター様ともに、同一料金でご案内しております。<br>
+        ★眉毛メニューをご予約のお客様は、ご来店の3週間前から眉毛の自己処理をお控えください。<br>
+        ★まつげメニューをご予約のお客様は、当日のアイメイクはお控えください。
+      </p>
+    </section>
+
+    <!-- 予約リンク -->
+    <section class="links">
+      🎀ご予約はこちら🎀
+
+      <a href="YOUR_HOTPEPPER_URL" target="_blank" rel="noopener noreferrer">
+        ホットペッパー🔗
+      </a>
+
+      <a href="YOUR_LINE_URL" target="_blank" rel="noopener noreferrer">
+        LINE🔗
+      </a>
+    </section>
+
+    <!-- プロフィール -->
+    <section class="profile">
+      <div class="photo">
+        わし<br>
+        （似顔絵か自作キャラ）
+      </div>
+
+      <div>
+        わし<br>
+        好きなこと<br>
+        <i>mbti</i><br>
+        <a href="YOUR_INSTAGRAM_URL" target="_blank" rel="noopener noreferrer">
+          <i>Instagram🔗</i>
+        </a>
+      </div>
+    </section>
+
+    <!-- お支払い方法 -->
+    <section class="payment">
+      お支払い方法<br>
+      クレジットカード／電子マネー／QRコード決済／交通系IC／現金
+    </section>
+
+    <!-- アクセス -->
     <section>
       <h2>access</h2>
-      <p>住所：ここに住所を入力<br>営業時間：ここに営業時間を入力</p>
-      <p>open 9:00</p>
+      アクセス県アクセス市アクセス区
     </section>
 
-    <section class="payment">
-      <p>決済方法<br>VISA / JCB / 電子マネー / QRコード / 現金</p>
+    <!-- 営業時間・REALへの隠しリンク -->
+    <section>
+      <h2>
+        open 9:00〜
+        <a href="real.html" class="secret-link" aria-label="REALページ">🎀</a>
+      </h2>
     </section>
 
-    <footer>© omise</footer>
   </main>
 </body>
 </html>

@@ -4,7 +4,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>omise | salon</title>
+/* 店内写真だけ右寄せ */
+section:has(> .photo) {
+  display: flex;
+  justify-content: flex-end;
+}
 
+/* メニューの値段をそろえる */
+.menu-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 75px;
+  align-items: start;
+  gap: 8px;
+  width: 100%;
+  max-width: 280px;
+  margin: 5px 0;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.menu-item .price {
+  white-space: nowrap;
+  text-align: right;
+}
+
+/* 説明文の横幅を広げる */
+section {
+  width: 560px;
+  max-width: calc(100vw - 48px);
+}
+
+/* スマホ用 */
+@media (max-width: 600px) {
+  section {
+    width: 560px;
+    max-width: calc(100vw - 48px);
+  }
+}
   <style>
     * {
       box-sizing: border-box;
@@ -69,24 +105,29 @@
       padding: 20px;
       font-size: 12px;
     }
+    /* 店内写真だけ右寄せ */
+section:has(> .photo) {
+  display: flex;
+  justify-content: flex-end;
+}
 
     .menu-item {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: start;
-      gap: 8px;
-      width: 100%;
-      max-width: 280px;
-      margin: 5px 0;
-      font-size: 13px;
-      font-weight: bold;
-    }
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 75px;
+  align-items: start;
+  gap: 8px;
+  width: 100%;
+  max-width: 280px;
+  margin: 5px 0;
+  font-size: 13px;
+  font-weight: bold;
+}
 
-    .menu-item .price {
-      white-space: nowrap;
-      text-align: right;
-    }
-
+.menu-item .price {
+  white-space: nowrap;
+  text-align: right;
+}
+    
     a {
       color: inherit;
       text-decoration: none;
